@@ -1,0 +1,162 @@
+{
+  "extensionName": {
+    "message": "Video Translator",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Automatic video translation with real-time subtitles in 150+ languages. Works on all video sites with advanced features.",
+    "description": "Description of the extension"
+  },
+  "welcomeMessage": {
+    "message": "Video Translator installed successfully! Click the extension icon to get started.",
+    "description": "Welcome message shown on install"
+  },
+  "toggleTranslation": {
+    "message": "Toggle Translation",
+    "description": "Toggle translation on/off"
+  },
+  "openSettings": {
+    "message": "Open Settings",
+    "description": "Open settings page"
+  },
+  "enableTranslation": {
+    "message": "Enable Translation",
+    "description": "Enable translation checkbox"
+  },
+  "operatingMode": {
+    "message": "Operating Mode",
+    "description": "Operating mode selection"
+  },
+  "modeAuto": {
+    "message": "Auto Mode",
+    "description": "Auto operating mode"
+  },
+  "modeManual": {
+    "message": "Manual Mode",
+    "description": "Manual operating mode"
+  },
+  "modeEconomy": {
+    "message": "Economy Mode",
+    "description": "Economy operating mode"
+  },
+  "modeHighAccuracy": {
+    "message": "High Accuracy Mode",
+    "description": "High accuracy operating mode"
+  },
+  "modeSilent": {
+    "message": "Silent Mode",
+    "description": "Silent operating mode"
+  },
+  "modeInteractive": {
+    "message": "Interactive Mode",
+    "description": "Interactive operating mode"
+  },
+  "modeNormal": {
+    "message": "Normal Mode",
+    "description": "Normal operating mode"
+  },
+  "modeFast": {
+    "message": "Fast Mode",
+    "description": "Fast operating mode"
+  },
+  "modeBeta": {
+    "message": "Beta Mode",
+    "description": "Beta operating mode"
+  },
+  "modeCloud": {
+    "message": "Cloud Processing Mode",
+    "description": "Cloud processing mode"
+  },
+  "modeShared": {
+    "message": "Shared Mode",
+    "description": "Shared operating mode"
+  },
+  "sourceLanguage": {
+    "message": "Source Language",
+    "description": "Source language selection"
+  },
+  "targetLanguage": {
+    "message": "Target Language",
+    "description": "Target language selection"
+  },
+  "autoDetect": {
+    "message": "Auto Detect",
+    "description": "Auto detect language"
+  },
+  "displayMode": {
+    "message": "Display Mode",
+    "description": "Display mode selection"
+  },
+  "displaySimple": {
+    "message": "Simple",
+    "description": "Simple display mode"
+  },
+  "displayCinematic": {
+    "message": "Cinematic",
+    "description": "Cinematic display mode"
+  },
+  "displayEducational": {
+    "message": "Educational",
+    "description": "Educational display mode"
+  },
+  "displayInteractive": {
+    "message": "Interactive",
+    "description": "Interactive display mode"
+  },
+  "fontSize": {
+    "message": "Font Size",
+    "description": "Font size selection"
+  },
+  "fontSmall": {
+    "message": "Small",
+    "description": "Small font size"
+  },
+  "fontMedium": {
+    "message": "Medium",
+    "description": "Medium font size"
+  },
+  "fontLarge": {
+    "message": "Large",
+    "description": "Large font size"
+  },
+  "fontAuto": {
+    "message": "Auto",
+    "description": "Auto font size"
+  },
+  "dualLanguage": {
+    "message": "Show Both Languages",
+    "description": "Show both languages option"
+  },
+  "theme": {
+    "message": "Theme",
+    "description": "Theme selection"
+  },
+  "themeAuto": {
+    "message": "Auto",
+    "description": "Auto theme"
+  },
+  "themeLight": {
+    "message": "Light",
+    "description": "Light theme"
+  },
+  "themeDark": {
+    "message": "Dark",
+    "description": "Dark theme"
+  },
+  "testAudio": {
+    "message": "Test Audio",
+    "description": "Test audio button"
+  },
+  "exportSubtitles": {
+    "message": "Export Subtitles",
+    "description": "Export subtitles button"
+  },
+  "statusReady": {
+    "message": "Ready",
+    "description": "Ready status"
+  },
+  "advancedSettings": {
+    "message": "Advanced Settings",
+    "description": "Advanced settings button"
+  }
+}

@@ -1,0 +1,69 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--bg-primary);
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-top: 4px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchInput {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  outline: none;
+}
+
+.options {
+  overflow-y: auto;
+}
+
+.option {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.option:hover {
+  background: var(--secondary-bg);
+}
+
+.selected {
+  background: var(--accent-color-light);
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.code {
+  font-size: 11px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}

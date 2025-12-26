@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.tabItem:hover {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+}
+
+.active {
+  background: var(--accent-color-light) !important;
+  color: var(--accent-color) !important;
+  font-weight: 600;
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.label {
+  font-size: 14px;
+}
