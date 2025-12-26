@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <img src="icons/icon48.png" alt="Video Translator" class="logo">
+      <h1 class="title" data-i18n="extensionName">Video Translator</h1>
+    </header>
+
+    <!-- Main Controls -->
+    <div class="main-controls">
+      <!-- Translation Toggle -->
+      <div class="control-group">
+        <label class="toggle-container">
+          <input type="checkbox" id="translationToggle">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label" data-i18n="enableTranslation">Enable Translation</span>
+        </label>
+      </div>
+
+      <!-- Operating Mode Selection -->
+      <div class="control-group">
+        <label for="operatingMode" data-i18n="operatingMode">Operating Mode</label>
+        <select id="operatingMode" class="select-input">
+          <option value="auto" data-i18n="modeAuto">Auto Mode</option>
+          <option value="manual" data-i18n="modeManual">Manual Mode</option>
+          <option value="economy" data-i18n="modeEconomy">Economy Mode</option>
+          <option value="high-accuracy" data-i18n="modeHighAccuracy">High Accuracy Mode</option>
+          <option value="silent" data-i18n="modeSilent">Silent Mode</option>
+          <option value="interactive" data-i18n="modeInteractive">Interactive Mode</option>
+          <option value="normal" data-i18n="modeNormal">Normal Mode</option>
+          <option value="fast" data-i18n="modeFast">Fast Mode</option>
+          <option value="beta" data-i18n="modeBeta">Beta Mode</option>
+          <option value="cloud" data-i18n="modeCloud">Cloud Processing Mode</option>
+          <option value="shared" data-i18n="modeShared">Shared Mode</option>
+        </select>
+      </div>
+
+      <!-- Language Selection -->
+      <div class="control-group">
+        <label for="sourceLanguage" data-i18n="sourceLanguage">Source Language</label>
+        <select id="sourceLanguage" class="select-input">
+          <option value="auto" data-i18n="autoDetect">Auto Detect</option>
+          <!-- Languages will be populated by JavaScript -->
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="targetLanguage" data-i18n="targetLanguage">Target Language</label>
+        <select id="targetLanguage" class="select-input">
+          <!-- Languages will be populated by JavaScript -->
+        </select>
+      </div>
+
+      <!-- Display Settings -->
+      <div class="control-group">
+        <label for="displayMode" data-i18n="displayMode">Display Mode</label>
+        <select id="displayMode" class="select-input">
+          <option value="simple" data-i18n="displaySimple">Simple</option>
+          <option value="cinematic" data-i18n="displayCinematic">Cinematic</option>
+          <option value="educational" data-i18n="displayEducational">Educational</option>
+          <option value="interactive" data-i18n="displayInteractive">Interactive</option>
+        </select>
+      </div>
+
+      <!-- Font Size -->
+      <div class="control-group">
+        <label for="fontSize" data-i18n="fontSize">Font Size</label>
+        <select id="fontSize" class="select-input">
+          <option value="small" data-i18n="fontSmall">Small</option>
+          <option value="medium" data-i18n="fontMedium">Medium</option>
+          <option value="large" data-i18n="fontLarge">Large</option>
+          <option value="auto" data-i18n="fontAuto">Auto</option>
+        </select>
+      </div>
+
+      <!-- Dual Language Toggle -->
+      <div class="control-group">
+        <label class="checkbox-container">
+          <input type="checkbox" id="dualLanguage">
+          <span class="checkbox-label" data-i18n="dualLanguage">Show Both Languages</span>
+        </label>
+      </div>
+
+      <!-- Theme Selection -->
+      <div class="control-group">
+        <label for="theme" data-i18n="theme">Theme</label>
+        <select id="theme" class="select-input">
+          <option value="auto" data-i18n="themeAuto">Auto</option>
+          <option value="light" data-i18n="themeLight">Light</option>
+          <option value="dark" data-i18n="themeDark">Dark</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <button id="testAudio" class="btn btn-secondary" data-i18n="testAudio">
+        Test Audio
+      </button>
+      <button id="exportSubtitles" class="btn btn-secondary" data-i18n="exportSubtitles">
+        Export Subtitles
+      </button>
+    </div>
+
+    <!-- Status Indicator -->
+    <div class="status-bar">
+      <span class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text" data-i18n="statusReady">Ready</span>
+      </span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <button id="openSettings" class="btn btn-link" data-i18n="advancedSettings">
+        Advanced Settings
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

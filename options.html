@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Translator - Advanced Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <img src="icons/icon48.png" alt="Video Translator">
+        <h2>Video Translator</h2>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active" data-section="general">General</li>
+        <li class="nav-item" data-section="audio">Audio Capture</li>
+        <li class="nav-item" data-section="translation">Translation</li>
+        <li class="nav-item" data-section="display">Display & UI</li>
+        <li class="nav-item" data-section="performance">Performance</li>
+        <li class="nav-item" data-section="privacy">Privacy & Security</li>
+        <li class="nav-item" data-section="advanced">Advanced</li>
+        <li class="nav-item" data-section="about">About</li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1 id="sectionTitle">General Settings</h1>
+        <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+      </header>
+
+      <!-- General Section -->
+      <section id="general" class="settings-section active">
+        <div class="setting-group">
+          <h3>Language Settings</h3>
+          
+          <div class="setting-item">
+            <label for="uiLanguage">UI Language</label>
+            <select id="uiLanguage" class="select-input">
+              <option value="en">English</option>
+              <option value="ar">العربية (Arabic)</option>
+              <option value="es">Español (Spanish)</option>
+              <option value="fr">Français (French)</option>
+              <option value="de">Deutsch (German)</option>
+              <option value="zh">中文 (Chinese)</option>
+              <option value="ja">日本語 (Japanese)</option>
+              <option value="ko">한국어 (Korean)</option>
+              <option value="ru">Русский (Russian)</option>
+              <option value="pt">Português (Portuguese)</option>
+              <!-- More languages... -->
+            </select>
+            <p class="setting-description">Change the extension's interface language</p>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Operating Mode</h3>
+          
+          <div class="setting-item">
+            <label>Select Operating Mode</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="operatingMode" value="auto" checked>
+                <span class="radio-label">
+                  <strong>Auto Mode</strong>
+                  <small>Automatically optimizes all settings</small>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="operatingMode" value="manual">
+                <span class="radio-label">
+                  <strong>Manual Mode</strong>
+                  <small>Full control over all settings</small>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="operatingMode" value="economy">
+                <span class="radio-label">
+                  <strong>Economy Mode</strong>
+                  <small>Reduces resource usage</small>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="operatingMode" value="high-accuracy">
+                <span class="radio-label">
+                  <strong>High Accuracy Mode</strong>
+                  <small>Best translation quality</small>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Theme</h3>
+          
+          <div class="setting-item">
+            <label for="theme">Appearance</label>
+            <select id="theme" class="select-input">
+              <option value="auto">Auto (Follow System)</option>
+              <option value="light">Light Mode</option>
+              <option value="dark">Dark Mode</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Audio Capture Section -->
+      <section id="audio" class="settings-section">
+        <div class="setting-group">
+          <h3>Audio Capture Method</h3>
+          
+          <div class="setting-item">
+            <label for="audioCaptureMethod">Capture Method</label>
+            <select id="audioCaptureMethod" class="select-input">
+              <option value="direct">Direct Capture (Recommended)</option>
+              <option value="microphone">Microphone Capture</option>
+              <option value="hybrid">Hybrid Capture (Direct + Mic)</option>
+              <option value="api">API Capture (Whisper/OpenAI)</option>
+              <option value="manual">Manual Upload</option>
+              <option value="multi-channel">Multi-channel Capture</option>
+              <option value="noise-filter">With Noise Filtering</option>
+              <option value="advanced-noise">Advanced Noise Filtering</option>
+              <option value="realtime">Real-time (<1s latency)</option>
+              <option value="buffer">Buffer Capture (3-10s)</option>
+              <option value="compressed">Compressed Capture</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="alwaysCaptureMode">
+              Always Capture Mode (Continue even when video is paused)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="multiDeviceRecording">
+              Multi-device Recording Support
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label for="bluetoothLatencyCompensation">Bluetooth Latency Compensation (ms)</label>
+            <input type="number" id="bluetoothLatencyCompensation" min="0" max="1000" value="100" class="number-input">
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Audio Processing Server</h3>
+          
+          <div class="setting-item">
+            <label for="audioProcessingServer">Processing Server</label>
+            <select id="audioProcessingServer" class="select-input">
+              <option value="webaudio">Web Audio API</option>
+              <option value="ffmpeg">FFmpeg.wasm</option>
+              <option value="mediarecorder">MediaRecorder</option>
+              <option value="audiocontext">AudioContext + Web Workers</option>
+              <option value="recordrtc">RecordRTC</option>
+              <option value="howler">Howler.js</option>
+              <option value="tone">Tone.js</option>
+              <option value="cloudconvert">CloudConvert</option>
+              <option value="online-converter">Online Audio Converter</option>
+              <option value="whisper-local">Local Whisper.cpp</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Translation Section -->
+      <section id="translation" class="settings-section">
+        <div class="setting-group">
+          <h3>Translation Engines</h3>
+          <p class="info-text">Select and prioritize translation engines. The extension will try each enabled engine in order until one succeeds.</p>
+          
+          <div id="translationEnginesList" class="engine-list">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Translation Quality</h3>
+          
+          <div class="setting-item">
+            <label for="qualityMode">Quality Mode</label>
+            <select id="qualityMode" class="select-input">
+              <option value="high">High Quality (Slower)</option>
+              <option value="balanced">Balanced (Recommended)</option>
+              <option value="low">Low Quality (Faster)</option>
+              <option value="economy">Economy Mode</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label for="maxRetries">Maximum Retry Attempts</label>
+            <input type="number" id="maxRetries" min="1" max="10" value="3" class="number-input">
+          </div>
+
+          <div class="setting-item">
+            <label for="retryDelay">Retry Delay (ms)</label>
+            <input type="number" id="retryDelay" min="0" max="10000" value="2000" class="number-input">
+          </div>
+        </div>
+      </section>
+
+      <!-- Display & UI Section -->
+      <section id="display" class="settings-section">
+        <div class="setting-group">
+          <h3>Subtitle Display</h3>
+          
+          <div class="setting-item">
+            <label for="displayMode">Display Mode</label>
+            <select id="displayMode" class="select-input">
+              <option value="simple">Simple (Subtitles only)</option>
+              <option value="cinematic">Cinematic (Large clear text)</option>
+              <option value="educational">Educational (Dual language)</option>
+              <option value="interactive">Interactive (Editable)</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label for="position">Subtitle Position</label>
+            <select id="position" class="select-input">
+              <option value="bottom">Bottom</option>
+              <option value="top">Top</option>
+              <option value="center">Center</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="dualLanguage">
+              Show Both Languages (Original + Translation)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="smartMode">
+              Smart Mode (Auto-adjust based on context)
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Text Styling</h3>
+          
+          <div class="setting-item">
+            <label for="fontSize">Font Size</label>
+            <select id="fontSize" class="select-input">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="auto">Auto</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label for="fontFamily">Font Family</label>
+            <select id="fontFamily" class="select-input">
+              <option value="sans-serif">Sans Serif</option>
+              <option value="serif">Serif</option>
+              <option value="monospace">Monospace</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label for="textColor">Text Color</label>
+            <input type="color" id="textColor" value="#FFFFFF" class="color-input">
+          </div>
+
+          <div class="setting-item">
+            <label for="backgroundColor">Background Color</label>
+            <input type="color" id="backgroundColor" value="#000000" class="color-input">
+          </div>
+
+          <div class="setting-item">
+            <label for="opacity">Opacity (%)</label>
+            <input type="range" id="opacity" min="0" max="100" value="90" class="range-input">
+            <output id="opacityValue">90</output>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Section -->
+      <section id="performance" class="settings-section">
+        <div class="setting-group">
+          <h3>Performance Settings</h3>
+          
+          <div class="setting-item">
+            <label for="performanceMode">Performance Mode</label>
+            <select id="performanceMode" class="select-input">
+              <option value="high">High Performance</option>
+              <option value="balanced">Balanced</option>
+              <option value="low">Low Performance (Battery Saver)</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="gpuAcceleration" checked>
+              Enable GPU Acceleration
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="batteryEconomy">
+              Battery Economy Mode (Mobile)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label for="maxMemoryMB">Maximum Memory Usage (MB)</label>
+            <input type="number" id="maxMemoryMB" min="50" max="500" value="100" class="number-input">
+          </div>
+
+          <div class="setting-item">
+            <label for="bufferSize">Buffer Size (seconds)</label>
+            <input type="number" id="bufferSize" min="1" max="30" value="5" class="number-input">
+          </div>
+
+          <div class="setting-item">
+            <label for="latencyTarget">Target Latency (ms)</label>
+            <input type="number" id="latencyTarget" min="100" max="5000" value="1000" class="number-input">
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Security Section -->
+      <section id="privacy" class="settings-section">
+        <div class="setting-group">
+          <h3>Privacy Settings</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="localOnlyMode">
+              Local Only Mode (No cloud services)
+            </label>
+            <p class="setting-description">Process everything locally, no data sent to external servers</p>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="autoDeleteRecordings" checked>
+              Auto-delete Audio Recordings
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="anonymousMode" checked>
+              Anonymous Mode (No tracking)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="encryptStorage">
+              Encrypt Local Storage
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="passwordProtection">
+              Enable Password Protection
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Data Management</h3>
+          
+          <div class="setting-item">
+            <button id="exportData" class="btn btn-secondary">Export Settings</button>
+            <button id="importData" class="btn btn-secondary">Import Settings</button>
+            <button id="clearData" class="btn btn-danger">Clear All Data</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Section -->
+      <section id="advanced" class="settings-section">
+        <div class="setting-group">
+          <h3>Advanced Features</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="archiveEnabled">
+              Auto-archive Videos with Translations
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="interactiveLearning">
+              Interactive Learning Mode (Personal Dictionary)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="sentimentAnalysis">
+              Sentiment Analysis (Detect emotions)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="smartAlerts">
+              Smart Alerts (Keyword detection)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="liveStreamingMode">
+              Live Streaming Mode (<1s latency)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="educationalMode">
+              Educational Mode (Side-by-side display)
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Site Compatibility</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="universalSupportMode" checked>
+              Universal Support Mode (Works on all sites)
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="iframeSupport" checked>
+              Enable iframe Support
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="drmBypassEnabled">
+              DRM Bypass (System audio capture)
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Offline Mode</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="offlineMode">
+              Enable Offline Mode
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <button id="downloadModels" class="btn btn-secondary">Download Offline Models</button>
+            <p class="setting-description">Download translation models for offline use (~500MB)</p>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Keyboard Shortcuts</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="enableShortcuts" checked>
+              Enable Keyboard Shortcuts
+            </label>
+          </div>
+
+          <div class="shortcuts-list">
+            <div class="shortcut-item">
+              <span>Toggle Translation</span>
+              <kbd>Ctrl+Shift+S</kbd>
+            </div>
+            <div class="shortcut-item">
+              <span>Increase Font Size</span>
+              <kbd>Ctrl+↑</kbd>
+            </div>
+            <div class="shortcut-item">
+              <span>Decrease Font Size</span>
+              <kbd>Ctrl+↓</kbd>
+            </div>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Notifications</h3>
+          
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="notificationsEnabled" checked>
+              Enable Notifications
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="failureAlerts" checked>
+              Show Failure Alerts
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="connectionAlerts" checked>
+              Show Connection Alerts
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="settings-section">
+        <div class="about-content">
+          <img src="icons/icon128.png" alt="Video Translator" class="about-icon">
+          <h2>Video Translator Extension</h2>
+          <p class="version">Version 1.0.0</p>
+          
+          <div class="about-info">
+            <h3>Features</h3>
+            <ul>
+              <li>11 Operating Modes for different use cases</li>
+              <li>11 Audio Capture Methods</li>
+              <li>10 Free Translation Engines with automatic fallback</li>
+              <li>Support for 150+ languages</li>
+              <li>35 UI languages available</li>
+              <li>Offline mode support</li>
+              <li>DRM bypass capabilities</li>
+              <li>Universal site compatibility</li>
+            </ul>
+
+            <h3>Privacy</h3>
+            <p>This extension prioritizes your privacy. No data is collected or sent to external servers unless you explicitly enable cloud features. All processing happens locally by default.</p>
+
+            <h3>Support</h3>
+            <p>For help, bug reports, or feature requests, please visit our GitHub repository.</p>
+
+            <div class="about-actions">
+              <button class="btn btn-secondary" id="checkUpdates">Check for Updates</button>
+              <button class="btn btn-secondary" id="viewLicense">View License</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Save Status -->
+      <div id="saveStatus" class="save-status"></div>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

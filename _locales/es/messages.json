@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Traductor de Video",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Traducción automática de video con subtítulos en tiempo real en más de 150 idiomas. Funciona en todos los sitios de video con características avanzadas.",
+    "description": "Description of the extension"
+  },
+  "welcomeMessage": {
+    "message": "¡Traductor de Video instalado con éxito! Haz clic en el ícono de la extensión para comenzar.",
+    "description": "Welcome message shown on install"
+  },
+  "toggleTranslation": {
+    "message": "Activar/Desactivar Traducción",
+    "description": "Toggle translation on/off"
+  },
+  "openSettings": {
+    "message": "Abrir Configuración",
+    "description": "Open settings page"
+  },
+  "enableTranslation": {
+    "message": "Habilitar Traducción",
+    "description": "Enable translation checkbox"
+  }
+}
