@@ -1,17 +1,4 @@
-import { ToBackgroundMessage, FromBackgroundMessage, MessageHandler, MessageFilter } from '../types/messages';
-
 const MESSAGE_TIMEOUT = 30000;
-
-export interface MessageOptions {
-  timeout?: number;
-  retry?: number;
-  retryDelay?: number;
-}
-
-export interface MessageChannel {
-  port: chrome.runtime.Port;
-  handlers: Map<string, Set<MessageHandler>>;
-}
 
 let messageIdCounter = 0;
 
@@ -20,8 +7,8 @@ const generateMessageId = (): string => {
 };
 
 export const sendMessage = async <T = unknown>(
-  message: ToBackgroundMessage,
-  options: MessageOptions = {}
+  message: any,
+  options: { timeout?: number; retry?: number; retryDelay?: number } = {}
 ): Promise<T> => {
   const { timeout = MESSAGE_TIMEOUT, retry = 0, retryDelay = 1000 } = options;
   const messageId = generateMessageId();
@@ -31,7 +18,7 @@ export const sendMessage = async <T = unknown>(
       reject(new Error(`Message timeout: ${messageId}`));
     }, timeout);
 
-    chrome.runtime.sendMessage({ ...message, id: messageId }, (response: FromBackgroundMessage | undefined) => {
+    chrome.runtime.sendMessage({ ...message, id: messageId }, (response: any) => {
       clearTimeout(timeoutId);
       
       if (chrome.runtime.lastError) {
@@ -61,8 +48,8 @@ export const sendMessage = async <T = unknown>(
 
 export const sendMessageToTab = async <T = unknown>(
   tabId: number,
-  message: ToBackgroundMessage,
-  options: MessageOptions = {}
+  message: any,
+  options: { timeout?: number } = {}
 ): Promise<T> => {
   const { timeout = MESSAGE_TIMEOUT } = options;
   const messageId = generateMessageId();
@@ -72,7 +59,7 @@ export const sendMessageToTab = async <T = unknown>(
       reject(new Error(`Tab message timeout: ${messageId}`));
     }, timeout);
 
-    chrome.tabs.sendMessage(tabId, { ...message, id: messageId }, (response: FromBackgroundMessage | undefined) => {
+    chrome.tabs.sendMessage(tabId, { ...message, id: messageId }, (response: any) => {
       clearTimeout(timeoutId);
 
       if (chrome.runtime.lastError) {
@@ -89,48 +76,7 @@ export const sendMessageToTab = async <T = unknown>(
   });
 };
 
-export const createMessageChannel = (
-  name: string,
-  handlers: Map<string, Set<MessageHandler>> = new Map()
-): MessageChannel => {
-  const port = chrome.runtime.connect({ name });
-
-  port.onMessage.addListener((message: FromBackgroundMessage, sender) => {
-    const handlersForType = handlers.get(message.type);
-    if (handlersForType) {
-      handlersForType.forEach(handler => {
-        try {
-          handler(message, sender);
-        } catch (error) {
-          console.error('Message handler error:', error);
-        }
-      });
-    }
-  });
-
-  port.onDisconnect.addListener(() => {
-    handlers.clear();
-  });
-
-  return { port, handlers };
-};
-
-export const addMessageHandler = (
-  channel: MessageChannel,
-  type: string,
-  handler: MessageHandler
-): (() => void) => {
-  if (!channel.handlers.has(type)) {
-    channel.handlers.set(type, new Set());
-  }
-  channel.handlers.get(type)!.add(handler);
-
-  return () => {
-    channel.handlers.get(type)?.delete(handler);
-  };
-};
-
-export const broadcastMessage = (message: ToBackgroundMessage): void => {
+export const broadcastMessage = (message: any): void => {
   chrome.tabs.query({}, (tabs) => {
     tabs.forEach(tab => {
       if (tab.id) {

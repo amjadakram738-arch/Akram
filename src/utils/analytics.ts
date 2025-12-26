@@ -5,6 +5,7 @@ interface AnalyticsEvent {
   action: string;
   label?: string;
   value?: number;
+  timestamp?: number;
 }
 
 interface SessionData {
@@ -42,7 +43,9 @@ const flushBuffer = async (): Promise<void> => {
   }
 };
 
-setInterval(flushBuffer, BUFFER_FLUSH_INTERVAL);
+if (typeof setInterval !== 'undefined') {
+  setInterval(flushBuffer, BUFFER_FLUSH_INTERVAL);
+}
 
 export const trackEvent = (event: AnalyticsEvent): void => {
   eventBuffer.push({

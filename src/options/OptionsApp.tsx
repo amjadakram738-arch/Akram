@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SettingsProvider } from '../shared/hooks/SettingsProvider';
+import { SettingsProvider, useSettings } from '../shared/hooks/useSettings';
 import { TabNavigation } from '../shared/components/TabNavigation';
 import { Dashboard } from './tabs/Dashboard';
 import { GeneralSettings } from './tabs/GeneralSettings';
