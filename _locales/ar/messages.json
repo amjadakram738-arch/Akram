@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "مترجم الفيديو",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "ترجمة تلقائية للفيديو مع ترجمات فورية بأكثر من 150 لغة. يعمل على جميع مواقع الفيديو مع ميزات متقدمة.",
+    "description": "Description of the extension"
+  },
+  "welcomeMessage": {
+    "message": "تم تثبيت مترجم الفيديو بنجاح! انقر على أيقونة الإضافة للبدء.",
+    "description": "Welcome message shown on install"
+  },
+  "toggleTranslation": {
+    "message": "تبديل الترجمة",
+    "description": "Toggle translation on/off"
+  },
+  "openSettings": {
+    "message": "فتح الإعدادات",
+    "description": "Open settings page"
+  },
+  "enableTranslation": {
+    "message": "تفعيل الترجمة",
+    "description": "Enable translation checkbox"
+  }
+}
