@@ -1,0 +1,125 @@
+/* Content Script Styles - Subtitle overlays and UI elements */
+
+/* Base overlay container */
+.video-translator-overlay {
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-translator-overlay * {
+  pointer-events: auto;
+}
+
+/* Subtitle text styling */
+.video-translator-subtitle {
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cinematic display mode */
+.video-translator-overlay.cinematic .video-translator-subtitle {
+  font-size: 28px !important;
+  padding: 12px 24px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Educational display mode */
+.video-translator-overlay.educational .video-translator-subtitle {
+  white-space: pre-line;
+  text-align: left;
+  max-width: 90%;
+  padding: 12px 20px;
+}
+
+/* Interactive display mode */
+.video-translator-overlay.interactive .video-translator-subtitle {
+  cursor: text;
+  user-select: text;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.video-translator-overlay.interactive .video-translator-subtitle:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Error message styling */
+.video-translator-error {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Dark theme adjustments */
+[data-video-translator-theme="dark"] .video-translator-subtitle {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.85);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Light theme adjustments */
+[data-video-translator-theme="light"] .video-translator-subtitle {
+  color: #000000;
+  background: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .video-translator-subtitle {
+    font-size: 16px !important;
+    padding: 6px 12px;
+    max-width: 95%;
+  }
+  
+  .video-translator-overlay.cinematic .video-translator-subtitle {
+    font-size: 20px !important;
+  }
+}
+
+/* High contrast mode for accessibility */
+@media (prefers-contrast: high) {
+  .video-translator-subtitle {
+    border: 2px solid currentColor;
+    background: rgba(0, 0, 0, 1) !important;
+    color: #FFFFFF !important;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .video-translator-subtitle,
+  .video-translator-overlay,
+  .video-translator-error {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print styles - hide overlays when printing */
+@media print {
+  .video-translator-overlay,
+  .video-translator-error {
+    display: none !important;
+  }
+}

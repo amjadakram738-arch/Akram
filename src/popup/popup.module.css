@@ -1,0 +1,156 @@
+:root {
+  --bg-primary: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --accent-color: #4A90E2;
+  --accent-color-light: rgba(74, 144, 226, 0.1);
+  --secondary-bg: #F5F5F5;
+  --border-color: #E0E0E0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1A1A1A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CCCCCC;
+    --accent-color: #6CB4FF;
+    --accent-color-light: rgba(108, 180, 255, 0.1);
+    --secondary-bg: #2D2D2D;
+    --border-color: #444444;
+  }
+}
+
+.popup {
+  width: 350px;
+  padding: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.languagePair {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.langCol {
+  flex: 1;
+}
+
+.arrow {
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.statusRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.toggleButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+
+.toggleButton.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.quickSettings {
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.settingsButton {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.settingsButton:hover {
+  background: var(--accent-color-light);
+}
+
+.shortcut {
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: var(--secondary-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.loading {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
