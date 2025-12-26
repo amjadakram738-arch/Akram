@@ -1,0 +1,41 @@
+{
+  "name": "video-translator-extension",
+  "version": "1.0.0",
+  "description": "Automatic real-time translation and subtitles for videos on any website with 150+ languages support",
+  "main": "background.js",
+  "scripts": {
+    "lint": "echo 'Linting not configured yet'",
+    "test": "echo 'Tests not configured yet'",
+    "build": "npm run package",
+    "package": "zip -r video-translator-extension.zip . -x '*.git*' 'node_modules/*' '*.ppm' 'create_icons.sh' 'package*.json'",
+    "clean": "rm -rf *.zip icons/*.ppm icons/*.svg"
+  },
+  "keywords": [
+    "chrome-extension",
+    "video",
+    "translation",
+    "subtitles",
+    "real-time",
+    "multilingual",
+    "accessibility",
+    "i18n",
+    "youtube",
+    "netflix"
+  ],
+  "author": "Video Translator Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/video-translator-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/video-translator-extension/issues"
+  },
+  "homepage": "https://github.com/your-username/video-translator-extension#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

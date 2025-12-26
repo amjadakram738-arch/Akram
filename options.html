@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Translator - Advanced Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="icons/icon48.png" alt="Logo">
+        <h1 data-i18n="extensionName">Video Translator</h1>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-section="general">
+          <span>⚙️</span>
+          <span data-i18n="navGeneral">General</span>
+        </button>
+        <button class="nav-item" data-section="translation">
+          <span>🌐</span>
+          <span data-i18n="navTranslation">Translation</span>
+        </button>
+        <button class="nav-item" data-section="audio">
+          <span>🎤</span>
+          <span data-i18n="navAudio">Audio Capture</span>
+        </button>
+        <button class="nav-item" data-section="display">
+          <span>📺</span>
+          <span data-i18n="navDisplay">Display</span>
+        </button>
+        <button class="nav-item" data-section="performance">
+          <span>⚡</span>
+          <span data-i18n="navPerformance">Performance</span>
+        </button>
+        <button class="nav-item" data-section="privacy">
+          <span>🔒</span>
+          <span data-i18n="navPrivacy">Privacy</span>
+        </button>
+        <button class="nav-item" data-section="advanced">
+          <span>🔧</span>
+          <span data-i18n="navAdvanced">Advanced</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="content-header">
+        <h2 id="sectionTitle">General Settings</h2>
+        <div class="header-actions">
+          <button id="exportBtn" class="secondary-btn">
+            <span>📤</span>
+            <span data-i18n="export">Export Settings</span>
+          </button>
+          <button id="importBtn" class="secondary-btn">
+            <span>📥</span>
+            <span data-i18n="import">Import Settings</span>
+          </button>
+          <button id="resetBtn" class="danger-btn">
+            <span>🔄</span>
+            <span data-i18n="reset">Reset All</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <!-- General Settings Section -->
+        <section id="section-general" class="settings-section active">
+          <div class="setting-card">
+            <h3 data-i18n="uiLanguage">Interface Language</h3>
+            <p class="setting-description" data-i18n="uiLanguageDesc">Select the language for the extension interface</p>
+            <select id="interfaceLanguage" class="select-input">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="it">Italiano</option>
+              <option value="pt">Português</option>
+              <option value="ru">Русский</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="theme">Theme</h3>
+            <p class="setting-description" data-i18n="themeDesc">Choose your preferred color theme</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="theme" value="auto" checked>
+                <span data-i18n="themeAuto">Auto (System)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="theme" value="light">
+                <span data-i18n="themeLight">Light</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="theme" value="dark">
+                <span data-i18n="themeDark">Dark</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="autoStart">Auto-Start Translation</h3>
+            <p class="setting-description" data-i18n="autoStartDesc">Automatically start translation when video is detected</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoStart">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Translation Settings Section -->
+        <section id="section-translation" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="translationEngines">Translation Engines</h3>
+            <p class="setting-description" data-i18n="translationEnginesDesc">Select and prioritize translation engines</p>
+            
+            <div class="engine-list">
+              <label class="checkbox-label">
+                <input type="checkbox" value="libre" checked>
+                <span>LibreTranslate</span>
+                <span class="badge">Free</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="deepl" checked>
+                <span>DeepL Free</span>
+                <span class="badge">Free</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="google" checked>
+                <span>Google Translate</span>
+                <span class="badge">Free</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="microsoft" checked>
+                <span>Microsoft Translator</span>
+                <span class="badge">Free</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="mymemory" checked>
+                <span>MyMemory</span>
+                <span class="badge">Free</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="yandex">
+                <span>Yandex</span>
+                <span class="badge">Free</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="languageDetection">Language Detection</h3>
+            <p class="setting-description" data-i18n="languageDetectionDesc">Automatically detect source language</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoDetectLanguage" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="supportedLanguages">Supported Languages (150+)</h3>
+            <p class="setting-description">Select your frequently used languages</p>
+            <div class="language-grid">
+              <label><input type="checkbox" value="ar"> Arabic</label>
+              <label><input type="checkbox" value="en" checked> English</label>
+              <label><input type="checkbox" value="es"> Spanish</label>
+              <label><input type="checkbox" value="fr"> French</label>
+              <label><input type="checkbox" value="de"> German</label>
+              <label><input type="checkbox" value="zh"> Chinese</label>
+              <label><input type="checkbox" value="ja"> Japanese</label>
+              <label><input type="checkbox" value="ko"> Korean</label>
+              <label><input type="checkbox" value="ru"> Russian</label>
+              <label><input type="checkbox" value="pt"> Portuguese</label>
+              <label><input type="checkbox" value="hi"> Hindi</label>
+              <label><input type="checkbox" value="tr"> Turkish</label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Audio Capture Settings Section -->
+        <section id="section-audio" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="captureMethod">Audio Capture Method</h3>
+            <select id="audioCaptureMethod" class="select-input">
+              <option value="direct">Direct Capture (Video Element)</option>
+              <option value="microphone">Microphone</option>
+              <option value="hybrid">Hybrid (Auto-select)</option>
+              <option value="system">System Audio</option>
+              <option value="api">Audio API</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="noiseFilter">Noise Filtering</h3>
+            <p class="setting-description">Reduce background noise and improve accuracy</p>
+            <select id="noiseFilterLevel" class="select-input">
+              <option value="off">Off</option>
+              <option value="light">Light</option>
+              <option value="medium" selected>Medium</option>
+              <option value="strong">Strong</option>
+              <option value="advanced">Advanced AI Filter</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="audioBuffer">Audio Buffer Size</h3>
+            <p class="setting-description">Balance between latency and accuracy</p>
+            <div class="slider-container">
+              <input type="range" id="bufferSize" min="1" max="10" value="3" step="1">
+              <span id="bufferSizeValue">3</span> seconds
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="alwaysCapture">Always Capture Audio</h3>
+            <p class="setting-description">Continue capturing even when muted or using headphones</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="alwaysCapture" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Display Settings Section -->
+        <section id="section-display" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="displayMode">Display Mode</h3>
+            <select id="displayMode" class="select-input">
+              <option value="simple">Simple Subtitles</option>
+              <option value="cinema">Cinema Mode</option>
+              <option value="educational">Educational (Dual Language)</option>
+              <option value="interactive">Interactive</option>
+              <option value="floating">Floating Panel</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="subtitleCustomization">Subtitle Customization</h3>
+            
+            <div class="customization-grid">
+              <div class="custom-item">
+                <label>Font Family</label>
+                <select id="fontFamily" class="select-input">
+                  <option value="Arial, sans-serif">Arial</option>
+                  <option value="'Times New Roman', serif">Times New Roman</option>
+                  <option value="'Courier New', monospace">Courier New</option>
+                  <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                  <option value="'Roboto', sans-serif">Roboto</option>
+                </select>
+              </div>
+
+              <div class="custom-item">
+                <label>Font Size</label>
+                <input type="number" id="subtitleFontSize" value="20" min="12" max="48" class="number-input">
+              </div>
+
+              <div class="custom-item">
+                <label>Text Color</label>
+                <input type="color" id="textColor" value="#ffffff" class="color-input">
+              </div>
+
+              <div class="custom-item">
+                <label>Background Color</label>
+                <input type="color" id="bgColor" value="#000000" class="color-input">
+              </div>
+
+              <div class="custom-item">
+                <label>Background Opacity</label>
+                <input type="range" id="bgOpacity" min="0" max="100" value="80" class="range-input">
+                <span id="bgOpacityValue">80</span>%
+              </div>
+
+              <div class="custom-item">
+                <label>Text Shadow</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="textShadow" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="subtitlePosition">Subtitle Position</h3>
+            <div class="position-selector">
+              <button class="position-btn" data-position="top">Top</button>
+              <button class="position-btn" data-position="middle">Middle</button>
+              <button class="position-btn active" data-position="bottom">Bottom</button>
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="draggable">Draggable Subtitles</h3>
+            <label class="toggle-switch">
+              <input type="checkbox" id="draggableSubtitles">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Performance Settings Section -->
+        <section id="section-performance" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="operatingMode">Operating Mode</h3>
+            <select id="performanceMode" class="select-input">
+              <option value="auto">Auto</option>
+              <option value="normal" selected>Normal</option>
+              <option value="economy">Economy (Low Power)</option>
+              <option value="high-accuracy">High Accuracy</option>
+              <option value="fast">Fast</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="gpuAcceleration">GPU Acceleration</h3>
+            <p class="setting-description">Use GPU for faster processing (if available)</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="gpuAcceleration">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="memoryLimit">Memory Limit</h3>
+            <p class="setting-description">Maximum memory usage</p>
+            <div class="slider-container">
+              <input type="range" id="memoryLimit" min="50" max="500" value="100" step="50">
+              <span id="memoryLimitValue">100</span> MB
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="offlineMode">Offline Mode</h3>
+            <p class="setting-description">Use local models for translation without internet</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="offlineModeEnabled">
+              <span class="toggle-slider"></span>
+            </label>
+            <button id="downloadModelsBtn" class="secondary-btn mt-3" disabled>
+              <span>⬇️</span>
+              <span data-i18n="downloadModels">Download Offline Models</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Privacy Settings Section -->
+        <section id="section-privacy" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="localProcessing">Local-Only Processing</h3>
+            <p class="setting-description">Process all data locally without sending to external servers</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="localOnlyMode" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="dataRetention">Data Retention</h3>
+            <select id="dataRetention" class="select-input">
+              <option value="none">Don't Save Translations</option>
+              <option value="session">Current Session Only</option>
+              <option value="day">1 Day</option>
+              <option value="week">1 Week</option>
+              <option value="month">1 Month</option>
+            </select>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="anonymousMode">Anonymous Mode</h3>
+            <p class="setting-description">Prevent sending any metadata</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="anonymousMode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="clearData">Clear All Data</h3>
+            <p class="setting-description">Delete all saved translations and cache</p>
+            <button id="clearDataBtn" class="danger-btn">
+              <span>🗑️</span>
+              <span data-i18n="clearAllData">Clear All Data</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Advanced Settings Section -->
+        <section id="section-advanced" class="settings-section">
+          <div class="setting-card">
+            <h3 data-i18n="customAPI">Custom API Endpoints</h3>
+            <div class="api-config">
+              <input type="text" id="customApiUrl" placeholder="https://api.example.com" class="text-input">
+              <input type="text" id="customApiKey" placeholder="API Key (optional)" class="text-input">
+            </div>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="experimentalFeatures">Experimental Features</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" id="betaMode">
+              <span data-i18n="enableBeta">Enable Beta Features</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="sentimentAnalysis">
+              <span data-i18n="sentimentAnalysis">Sentiment Analysis</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="smartAlerts">
+              <span data-i18n="smartAlerts">Smart Keyword Alerts</span>
+            </label>
+          </div>
+
+          <div class="setting-card">
+            <h3 data-i18n="debugging">Debugging</h3>
+            <label class="toggle-switch">
+              <input type="checkbox" id="debugMode">
+              <span class="toggle-slider"></span>
+            </label>
+            <button id="exportLogsBtn" class="secondary-btn mt-3">
+              <span>📋</span>
+              <span data-i18n="exportLogs">Export Debug Logs</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Save Button (Fixed at bottom) -->
+      <div class="save-bar">
+        <div class="save-status" id="saveStatus"></div>
+        <button id="saveBtn" class="save-btn">
+          <span data-i18n="saveSettings">Save Settings</span>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>

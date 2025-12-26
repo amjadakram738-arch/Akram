@@ -1,0 +1,196 @@
+/* Subtitle Container Styles */
+.vt-subtitle-container {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: auto;
+  
+  font-family: var(--subtitle-font-family, 'Arial', sans-serif);
+  font-size: var(--subtitle-font-size, 20px);
+  color: var(--subtitle-text-color, #ffffff);
+  background-color: var(--subtitle-bg-color, rgba(0, 0, 0, 0.8));
+  
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.vt-subtitle-container.vt-visible {
+  opacity: var(--subtitle-opacity, 0.9);
+  transform: translateY(0);
+}
+
+.vt-subtitle-container.vt-error {
+  background-color: rgba(220, 38, 38, 0.9);
+  color: white;
+}
+
+/* Text Shadow Effect */
+.vt-subtitle-container {
+  text-shadow: var(--subtitle-text-shadow, 2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+/* Dark Theme */
+.vt-subtitle-container.vt-dark-theme {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme */
+.vt-subtitle-container.vt-light-theme {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+
+/* Cinema Mode */
+.vt-subtitle-container.vt-cinema-mode {
+  font-size: 28px;
+  padding: 15px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 0;
+  width: 100%;
+  max-width: 100%;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+
+/* Educational Mode (Dual Subtitles) */
+.vt-subtitle-container.vt-educational-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vt-subtitle-container.vt-educational-mode .vt-original {
+  font-size: 0.85em;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Draggable Cursor */
+.vt-subtitle-container[draggable="true"] {
+  cursor: grab;
+}
+
+.vt-subtitle-container[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+/* Floating Panel Mode */
+.vt-subtitle-container.vt-floating-panel {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  max-width: 400px;
+  min-width: 250px;
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* Loading State */
+.vt-subtitle-container.vt-loading::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: vt-spin 0.6s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes vt-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vt-subtitle-container {
+    font-size: calc(var(--subtitle-font-size, 20px) * 0.8);
+    padding: 8px 15px;
+    max-width: 90%;
+  }
+  
+  .vt-subtitle-container.vt-floating-panel {
+    right: 10px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .vt-subtitle-container {
+    background-color: rgba(0, 0, 0, 1);
+    border: 2px solid white;
+    font-weight: bold;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .vt-subtitle-container {
+    transition: none;
+  }
+}
+
+/* Dark Mode Auto-Detection */
+@media (prefers-color-scheme: dark) {
+  .vt-subtitle-container:not(.vt-light-theme) {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .vt-subtitle-container:not(.vt-dark-theme) {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Animation Classes */
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.vt-subtitle-container.vt-animate-in {
+  animation: vt-fade-in 0.3s ease forwards;
+}
+
+.vt-subtitle-container.vt-animate-out {
+  animation: vt-fade-out 0.3s ease forwards;
+}

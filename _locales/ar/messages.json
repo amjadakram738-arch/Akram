@@ -1,0 +1,100 @@
+{
+  "extensionName": {
+    "message": "مترجم الفيديو - ترجمة تلقائية",
+    "description": "اسم الإضافة"
+  },
+  "extensionDescription": {
+    "message": "ترجمة تلقائية فورية وترجمات للفيديوهات على أي موقع. يدعم أكثر من 150 لغة مع وضع غير متصل.",
+    "description": "وصف الإضافة"
+  },
+  "statusActive": {
+    "message": "نشط"
+  },
+  "statusInactive": {
+    "message": "غير نشط"
+  },
+  "startTranslation": {
+    "message": "بدء الترجمة"
+  },
+  "stopTranslation": {
+    "message": "إيقاف الترجمة"
+  },
+  "quickSettingsTitle": {
+    "message": "الإعدادات السريعة"
+  },
+  "sourceLangLabel": {
+    "message": "لغة المصدر"
+  },
+  "targetLangLabel": {
+    "message": "لغة الهدف"
+  },
+  "operatingModeLabel": {
+    "message": "وضع التشغيل"
+  },
+  "captureModeLabel": {
+    "message": "التقاط الصوت"
+  },
+  "subtitlePositionLabel": {
+    "message": "موضع الترجمة"
+  },
+  "fontSizeLabel": {
+    "message": "حجم الخط"
+  },
+  "offlineModeLabel": {
+    "message": "الوضع غير المتصل"
+  },
+  "noiseReductionLabel": {
+    "message": "تقليل الضوضاء"
+  },
+  "advancedSettings": {
+    "message": "إعدادات متقدمة"
+  },
+  "help": {
+    "message": "مساعدة"
+  },
+  "contextMenuTranslateVideo": {
+    "message": "ترجمة هذا الفيديو"
+  },
+  "contextMenuTranslateAudio": {
+    "message": "ترجمة هذا الصوت"
+  },
+  "notificationStarted": {
+    "message": "بدأت الترجمة"
+  },
+  "notificationStartedMessage": {
+    "message": "جارٍ ترجمة محتوى الفيديو في الوقت الفعلي"
+  },
+  "navGeneral": {
+    "message": "عام"
+  },
+  "navTranslation": {
+    "message": "الترجمة"
+  },
+  "navAudio": {
+    "message": "التقاط الصوت"
+  },
+  "navDisplay": {
+    "message": "العرض"
+  },
+  "navPerformance": {
+    "message": "الأداء"
+  },
+  "navPrivacy": {
+    "message": "الخصوصية"
+  },
+  "navAdvanced": {
+    "message": "متقدم"
+  },
+  "export": {
+    "message": "تصدير الإعدادات"
+  },
+  "import": {
+    "message": "استيراد الإعدادات"
+  },
+  "reset": {
+    "message": "إعادة تعيين الكل"
+  },
+  "saveSettings": {
+    "message": "حفظ الإعدادات"
+  }
+}
