@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Traducteur Vidéo - Sous-titres Automatiques"
+  },
+  "extensionDescription": {
+    "message": "Traduction automatique en temps réel et sous-titres pour vidéos sur n'importe quel site Web. Prend en charge plus de 150 langues avec mode hors ligne."
+  },
+  "statusActive": {
+    "message": "Actif"
+  },
+  "statusInactive": {
+    "message": "Inactif"
+  },
+  "startTranslation": {
+    "message": "Démarrer la Traduction"
+  },
+  "stopTranslation": {
+    "message": "Arrêter la Traduction"
+  },
+  "quickSettingsTitle": {
+    "message": "Paramètres Rapides"
+  },
+  "sourceLangLabel": {
+    "message": "Langue Source"
+  },
+  "targetLangLabel": {
+    "message": "Langue Cible"
+  },
+  "advancedSettings": {
+    "message": "Paramètres Avancés"
+  },
+  "help": {
+    "message": "Aide"
+  },
+  "saveSettings": {
+    "message": "Enregistrer les Paramètres"
+  }
+}

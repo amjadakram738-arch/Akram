@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="logo">
+        <img src="icons/icon48.png" alt="Video Translator">
+        <h1 id="extensionTitle">Video Translator</h1>
+      </div>
+      <button id="settingsBtn" class="icon-btn" title="Settings">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Main Control Panel -->
+    <main class="popup-main">
+      <!-- Status Section -->
+      <section class="status-section">
+        <div class="status-indicator">
+          <div class="status-dot" id="statusDot"></div>
+          <span id="statusText">Inactive</span>
+        </div>
+        <button id="toggleBtn" class="primary-btn">
+          <span id="toggleBtnText">Start Translation</span>
+        </button>
+      </section>
+
+      <!-- Quick Settings -->
+      <section class="quick-settings">
+        <h2 id="quickSettingsTitle">Quick Settings</h2>
+        
+        <!-- Language Selection -->
+        <div class="setting-group">
+          <label for="sourceLang" id="sourceLangLabel">Source Language</label>
+          <select id="sourceLang" class="select-input">
+            <option value="auto">Auto Detect</option>
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ru">Russian</option>
+            <option value="pt">Portuguese</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label for="targetLang" id="targetLangLabel">Target Language</label>
+          <select id="targetLang" class="select-input">
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ru">Russian</option>
+            <option value="pt">Portuguese</option>
+          </select>
+        </div>
+
+        <!-- Operating Mode -->
+        <div class="setting-group">
+          <label for="operatingMode" id="operatingModeLabel">Operating Mode</label>
+          <select id="operatingMode" class="select-input">
+            <option value="auto">Auto Mode</option>
+            <option value="manual">Manual Mode</option>
+            <option value="economy">Economy Mode</option>
+            <option value="high-accuracy">High Accuracy</option>
+            <option value="silent">Silent Mode</option>
+            <option value="fast">Fast Mode</option>
+            <option value="normal" selected>Normal Mode</option>
+          </select>
+        </div>
+
+        <!-- Capture Mode -->
+        <div class="setting-group">
+          <label for="captureMode" id="captureModeLabel">Audio Capture</label>
+          <select id="captureMode" class="select-input">
+            <option value="direct" selected>Direct Capture</option>
+            <option value="microphone">Microphone</option>
+            <option value="hybrid">Hybrid Mode</option>
+            <option value="system">System Audio</option>
+          </select>
+        </div>
+
+        <!-- Display Options -->
+        <div class="setting-group">
+          <label for="subtitlePosition" id="subtitlePositionLabel">Subtitle Position</label>
+          <select id="subtitlePosition" class="select-input">
+            <option value="bottom" selected>Bottom</option>
+            <option value="top">Top</option>
+            <option value="middle">Middle</option>
+          </select>
+        </div>
+
+        <!-- Font Size -->
+        <div class="setting-group">
+          <label for="fontSize" id="fontSizeLabel">Font Size: <span id="fontSizeValue">20</span>px</label>
+          <input type="range" id="fontSize" class="range-input" min="12" max="48" value="20" step="2">
+        </div>
+
+        <!-- Offline Mode Toggle -->
+        <div class="setting-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="offlineMode">
+            <span id="offlineModeLabel">Offline Mode</span>
+          </label>
+        </div>
+
+        <!-- Noise Reduction Toggle -->
+        <div class="setting-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="noiseReduction" checked>
+            <span id="noiseReductionLabel">Noise Reduction</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Quick Stats -->
+      <section class="stats-section">
+        <div class="stat-item">
+          <span class="stat-label" id="statWordsLabel">Words</span>
+          <span class="stat-value" id="statWords">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label" id="statTimeLabel">Time</span>
+          <span class="stat-value" id="statTime">0:00</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label" id="statAccuracyLabel">Accuracy</span>
+          <span class="stat-value" id="statAccuracy">--</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <button id="advancedSettingsBtn" class="text-btn" data-i18n="advancedSettings">Advanced Settings</button>
+      <button id="helpBtn" class="text-btn" data-i18n="help">Help</button>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

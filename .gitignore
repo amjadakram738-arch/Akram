@@ -1,0 +1,81 @@
+# Video Translator Extension - .gitignore
+
+# Build directories
+dist/
+build/
+*.crx
+*.pem
+*.zip
+
+# Dependencies (if using npm/node modules in future)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE/Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+error.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+tmp/
+
+# User data (testing)
+test-data/
+user-profiles/
+
+# Icon source files (keep only final PNGs)
+*.ppm
+*.xcf
+*.psd
+*.sketch
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Coverage directory
+coverage/
+.nyc_output/
+
+# Test files (if added later)
+*.test.js
+*.spec.js
+__tests__/
+
+# Documentation build
+docs/_build/
+
+# Chrome specific
+manifest.json.backup
