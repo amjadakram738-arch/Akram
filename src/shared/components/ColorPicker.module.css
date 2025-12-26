@@ -1,0 +1,145 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.hexInput {
+  width: 100px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.picker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 220px;
+}
+
+.main {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hue {
+  width: 24px;
+  height: 150px;
+  background: linear-gradient(to bottom, red, yellow, lime, cyan, blue, magenta, red);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hueSlider {
+  width: 150px;
+  height: 24px;
+  transform: rotate(-90deg);
+  transform-origin: 75px 75px;
+  cursor: pointer;
+}
+
+.saturationLightness {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(to right, white, transparent),
+              linear-gradient(to bottom, transparent, black);
+  border-radius: 8px;
+  position: relative;
+  cursor: crosshair;
+}
+
+.slPreview {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.rgbSection {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rgbSection label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.rgbSection input {
+  width: 50px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  text-align: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.alphaSection {
+  margin-bottom: 12px;
+}
+
+.alphaSection label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.alphaSlider {
+  width: 100%;
+  cursor: pointer;
+}
+
+.presets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.preset {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.preset:hover {
+  transform: scale(1.1);
+}
+
+.preset.active {
+  border-color: var(--accent-color);
+}
