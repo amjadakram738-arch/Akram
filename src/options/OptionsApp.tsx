@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SettingsProvider, useSettings } from '../shared/hooks/useSettings';
 import { TabNavigation } from '../shared/components/TabNavigation';
 import { Dashboard } from './tabs/Dashboard';
 import { GeneralSettings } from './tabs/GeneralSettings';
@@ -17,7 +18,7 @@ const TABS = [
   { id: 'advanced', label: 'Advanced', icon: '🛠️' },
 ];
 
-export const OptionsApp: React.FC = () => {
+const OptionsContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const renderTab = () => {
@@ -57,5 +58,13 @@ export const OptionsApp: React.FC = () => {
         </div>
       </main>
     </div>
+  );
+};
+
+export const OptionsApp: React.FC = () => {
+  return (
+    <SettingsProvider>
+      <OptionsContent />
+    </SettingsProvider>
   );
 };
