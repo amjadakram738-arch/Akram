@@ -68,7 +68,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["offscreen.html", "lib/*", "icons/*"],
+      "resources": ["offscreen.html", "icons/*"],
       "matches": ["<all_urls>"]
     }
   ]
